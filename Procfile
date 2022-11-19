@@ -1,1 +1,1 @@
-web gunicorn news.wsgi:application --log-file -
+web: gunicorn --pythonpath project news.wsgi:application --access-logfile -
