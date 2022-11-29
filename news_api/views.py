@@ -5,8 +5,10 @@ def home(request):
     country = request.GET.get('country')
     category = request.GET.get('category')
     api_link = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={API_KEY}'
+    
     if country:
         api_link = f'https://newsapi.org/v2/top-headlines?country={country}&apiKey={API_KEY}'
+
     if category:
         api_link = f'https://newsapi.org/v2/top-headlines?country=us&category={category}&apiKey={API_KEY}'
     response = requests.get(api_link)
